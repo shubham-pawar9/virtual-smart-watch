@@ -10,7 +10,7 @@ const FaceUI = ({ setFaceBg, setDialStatus, setFacesShow }) => {
   };
 
   const faceLoad = () => {
-    for (let i = 1; i <= 16; i++) {
+    for (let i = 1; i <= 17; i++) {
       const div = document.createElement("div");
 
       div.classList.add("faces");
