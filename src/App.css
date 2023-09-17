@@ -1,0 +1,176 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.mainDiv {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+}
+.dialDiv {
+  height: 160px;
+    width: 125px;
+    border: 1px solid black;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.dialScreen {
+  height: 90%;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    border-radius: 11px;
+   
+}
+.analogDiv{
+  height: 100%;
+  width: 100%;
+  cursor: pointer;
+  z-index: 999;
+  /* background-image: url('process.env.PUBLIC_URL/images/faces/bike.jpg'); */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: center;
+}
+.faceUIDiv {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+.faces {
+  height: 30px;
+    width: 30px;
+    border: 1px solid black;
+}
+.faces img {
+  width: 100%;
+}
+ .numbersDiv {
+  height: 100%;
+  width: 100%;
+  border: none;
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+.numbersDiv .numbers {
+  position: absolute;
+  transform-origin: 50% 50%;
+  font-size: 12px;
+
+}
+
+.numbersDiv .numbers:nth-child(2) { transform: rotate(30deg) translate(0, -50px); }
+.numbersDiv .numbers:nth-child(3) { transform: rotate(60deg) translate(0, -50px); }
+.numbersDiv .numbers:nth-child(4) { transform: rotate(90deg) translate(0, -50px); }
+.numbersDiv .numbers:nth-child(5) { transform: rotate(120deg) translate(0, -50px); }
+.numbersDiv .numbers:nth-child(6) { transform: rotate(150deg) translate(0, -50px); }
+.numbersDiv .numbers:nth-child(7) { transform: rotate(180deg) translate(0, -50px); }
+.numbersDiv .numbers:nth-child(8) { transform: rotate(210deg) translate(0, -50px); }
+.numbersDiv .numbers:nth-child(9) { transform: rotate(240deg) translate(0, -50px); }
+.numbersDiv .numbers:nth-child(10) { transform: rotate(270deg) translate(0, -50px); }
+.numbersDiv .numbers:nth-child(11) { transform: rotate(300deg) translate(0, -50px); }
+.numbersDiv .numbers:nth-child(12) { transform: rotate(330deg) translate(0, -50px); }
+.numbersDiv .numbers:nth-child(13) { transform: rotate(0deg) translate(0, -50px); }
+
+.handsDiv {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hour-hand,
+.minute-hand,
+.second-hand {
+  position: absolute;
+  background-color: #333;
+}
+
+.hour-hand {
+  width: 3px;
+  height: 30px;
+  transform-origin: 50% 100%;
+  transform: rotate(4deg);
+  position: absolute;
+  top: 29%;
+  border-radius: 50% 50% 0% 0%;
+}
+
+.minute-hand {
+  width: 2px;
+    height: 33px;
+    transform-origin: 50% 100%;
+    transform: rotate(241deg);
+    position: absolute;
+    top: 27%;
+    border-radius: 50% 50% 0% 0%;
+}
+
+.second-hand {
+  width: 1px;
+  height: 38px;
+  transform-origin: 50% 100%;
+  transform: rotate(179deg);
+  position: absolute;
+  top: 24%;
+  border-radius: 50% 50% 0% 0%;
+}
+.centerPoint {
+  height: 6px;
+    width: 6px;
+    border-radius: 50%;
+    background-color: #333;
+    z-index: 1;
+}
