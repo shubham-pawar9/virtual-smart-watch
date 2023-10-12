@@ -3,6 +3,7 @@ const Menu = ({
   setMenuShowStatus,
   setBrightnessShow,
   setDialStatus,
+  setStopWatchShow,
 }) => {
   return (
     <>
@@ -26,6 +27,17 @@ const Menu = ({
             }}
           >
             Brightness
+          </li>
+          <li
+            className="menuList"
+            onClick={() => {
+              setStopWatchShow(true);
+              setMenuShowStatus(false);
+              setDialStatus(false);
+              setBrightnessShow(false);
+            }}
+          >
+            Stop watch
           </li>
         </ul>
       </div>

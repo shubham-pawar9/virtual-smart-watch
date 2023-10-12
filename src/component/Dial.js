@@ -4,6 +4,7 @@ import useTime from "./useTime";
 import FaceUI from "./Faces/FaceUI";
 import Menu from "./Menu";
 import Brightness from "./Faces/Brightness";
+import StopWatch from "./Faces/StopWatch";
 const Dial = ({
   facesFun,
   facesShow,
@@ -15,6 +16,8 @@ const Dial = ({
   setMenuShowStatus,
   brightnessShow,
   setBrightnessShow,
+  setStopWatchShow,
+  stopWatchShow,
 }) => {
   const [faceBg, setFaceBg] = useState("./images/faces/1.jpg");
 
@@ -23,7 +26,8 @@ const Dial = ({
   const [hourStyle, setHourStyle] = useState({});
   const [minuteStyle, setMinuteStyle] = useState({});
   const [secondStyle, setSecondStyle] = useState({});
-
+  const [dialBrightness, setDialBrightness] = useState("");
+  const dialRef = useRef(10);
   useEffect(() => {
     // Update the styles for rotation
     setHourStyle({ transform: `rotate(${hourRotation}deg)` });
@@ -37,7 +41,7 @@ const Dial = ({
     <>
       <div className="mainDiv">
         <div className="dialDiv">
-          <div className="dialScreen" onDoubleClick={facesFun}>
+          <div className="dialScreen" ref={dialRef}>
             {facesShow && (
               <FaceUI
                 setFaceBg={setFaceBg}
@@ -51,6 +55,7 @@ const Dial = ({
                 hourStyle={hourStyle}
                 minuteStyle={minuteStyle}
                 secondStyle={secondStyle}
+                facesFun={facesFun}
               />
             )}
             {menuShowStatus && (
@@ -59,9 +64,11 @@ const Dial = ({
                 setMenuShowStatus={setMenuShowStatus}
                 setBrightnessShow={setBrightnessShow}
                 setDialStatus={setDialStatus}
+                setStopWatchShow={setStopWatchShow}
               />
             )}
-            {brightnessShow && <Brightness />}
+            {brightnessShow && <Brightness dialRef={dialRef} />}
+            {stopWatchShow && <StopWatch />}
           </div>
         </div>
         <div className="buttonDiv" onClick={menuShow}></div>

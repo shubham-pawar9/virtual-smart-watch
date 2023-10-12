@@ -61,6 +61,7 @@
     justify-content: center;
     border: 1px solid black;
     border-radius: 11px;
+    opacity: 1;
    
 }
 .analogDiv{
@@ -210,10 +211,11 @@
 }
 .menuList {
   list-style-type: none;
-  background-color: #8d8d8d;
-  margin: 2px 0;
-  cursor: pointer;
-  font-size: 12px;
+    padding: 5px 0;
+    cursor: pointer;
+    font-size: 12px;
+    border-bottom: 1px solid #029202;
+    color: #98bd91f0;
 }
 .brightnessDiv {
   height: 100%;
@@ -242,4 +244,43 @@ input[type=range]::-webkit-slider-thumb {
     border-radius: 4px;
   cursor: pointer;
   -webkit-appearance: none;
+}
+.stopWatch {
+  height: 100%;
+  width: 100%;
+  border-radius: inherit;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.stopWatchHeading {
+  font-size: larger;
+  text-align: center;
+  margin: 0;
+}
+.numbers {
+  display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.milSeconds {
+  font-size: 3.2rem;
+}
+.hours, .minutes, .seconds {
+  margin: 0 5px;
+}
+.btnDiv {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+button {
+  cursor: pointer;
+}
+.start-stop, .reset {
+  border-radius: 3px;
+  border: none;
+  box-shadow: 0px 0px 6px 0px #8080808c;
 }

@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useRef } from "react";
 
-const Analog = ({ hourStyle, minuteStyle, secondStyle, faceBg }) => {
+const Analog = ({ hourStyle, minuteStyle, secondStyle, faceBg, facesFun }) => {
   const numbersRef = useRef();
   const numbers = () => {
     for (let i = 1; i <= 12; i++) {
@@ -16,7 +16,11 @@ const Analog = ({ hourStyle, minuteStyle, secondStyle, faceBg }) => {
   }, []);
   return (
     <>
-      <div className="analogDiv" style={{ backgroundImage: `url(${faceBg})` }}>
+      <div
+        className="analogDiv"
+        style={{ backgroundImage: `url(${faceBg})` }}
+        onDoubleClick={facesFun}
+      >
         <div className="numbersDiv" ref={numbersRef}>
           <div className="handsDiv">
             <div className="hour-hand" style={hourStyle}></div>
