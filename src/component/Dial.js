@@ -5,6 +5,16 @@ import FaceUI from "./Faces/FaceUI";
 import Menu from "./Menu";
 import Brightness from "./Faces/Brightness";
 import StopWatch from "./Faces/StopWatch";
+import strap1 from "../images/strap-design/strap1.png";
+import strap2 from "../images/strap-design/strap2.png";
+import strap3 from "../images/strap-design/strap3.png";
+import strap4 from "../images/strap-design/strap4.png";
+import strap5 from "../images/strap-design/strap5.png";
+import strap6 from "../images/strap-design/strap6.png";
+import strap7 from "../images/strap-design/strap7.png";
+import strap8 from "../images/strap-design/strap8.png";
+import strap9 from "../images/strap-design/strap9.png";
+import strap10 from "../images/strap-design/strap10.png";
 const Dial = ({
   facesFun,
   facesShow,
@@ -27,6 +37,8 @@ const Dial = ({
   const [minuteStyle, setMinuteStyle] = useState({});
   const [secondStyle, setSecondStyle] = useState({});
   const [dialBrightness, setDialBrightness] = useState("");
+  const strapTopRef = useRef();
+  const strapBottomRef = useRef();
   const dialRef = useRef(10);
   useEffect(() => {
     // Update the styles for rotation
@@ -34,9 +46,17 @@ const Dial = ({
     setMinuteStyle({ transform: `rotate(${minuteRotation}deg)` });
     setSecondStyle({ transform: `rotate(${secondRotation}deg)` });
   }, [secondRotation]);
-  // console.log(facesShow);
-  // console.log(facesShow, dialStatus);
-  // console.log(hourRotation, minuteRotation, secondRotation);
+
+  const handleStrapChange = (e) => {
+    document.querySelector(".strap-icon.active").classList.remove("active");
+    e.target.classList.add("active");
+    strapTopRef.current.style.backgroundImage = `url("${process.env.PUBLIC_URL}/images/strap-design/${e.target.id}.jpg")`;
+    strapBottomRef.current.style.backgroundImage = `url("${process.env.PUBLIC_URL}/images/strap-design/${e.target.id}.jpg")`;
+  };
+  useEffect(() => {
+    strapTopRef.current.style.backgroundImage = `url("${process.env.PUBLIC_URL}/images/strap-design/strap1.jpg")`;
+    strapBottomRef.current.style.backgroundImage = `url("${process.env.PUBLIC_URL}/images/strap-design/strap1.jpg")`;
+  }, []);
   return (
     <>
       <div className="mainDiv">
@@ -73,8 +93,72 @@ const Dial = ({
         </div>
         <div className="buttonDiv" onClick={menuShow}></div>
         <div className="chargingDiv"></div>
-        <div className="strapTop"></div>
-        <div className="strapBottom"></div>
+        <div ref={strapTopRef} className="strapTop"></div>
+        <div ref={strapBottomRef} className="strapBottom"></div>
+        <div className="strap-select-left">
+          <img
+            id="strap1"
+            onClick={(e) => handleStrapChange(e)}
+            className="strap-icon active"
+            src={strap1}
+          />
+          <img
+            id="strap2"
+            onClick={(e) => handleStrapChange(e)}
+            className="strap-icon"
+            src={strap2}
+          />
+          <img
+            id="strap3"
+            onClick={(e) => handleStrapChange(e)}
+            className="strap-icon"
+            src={strap3}
+          />
+          <img
+            id="strap4"
+            onClick={(e) => handleStrapChange(e)}
+            className="strap-icon"
+            src={strap4}
+          />
+          <img
+            id="strap5"
+            onClick={(e) => handleStrapChange(e)}
+            className="strap-icon"
+            src={strap5}
+          />
+        </div>
+        <div className="strap-select-right">
+          <img
+            id="strap6"
+            onClick={(e) => handleStrapChange(e)}
+            className="strap-icon"
+            src={strap6}
+          />
+          <img
+            id="strap7"
+            onClick={(e) => handleStrapChange(e)}
+            className="strap-icon"
+            src={strap7}
+          />
+          <img
+            id="strap8"
+            onClick={(e) => handleStrapChange(e)}
+            className="strap-icon"
+            src={strap8}
+          />
+          <img
+            id="strap9"
+            onClick={(e) => handleStrapChange(e)}
+            className="strap-icon"
+            src={strap9}
+          />
+          <img
+            id="strap10"
+            onClick={(e) => handleStrapChange(e)}
+            className="strap-icon"
+            src={strap10}
+          />
+        </div>
       </div>
     </>
   );
