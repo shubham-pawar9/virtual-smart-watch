@@ -73,6 +73,8 @@ const Dial = ({
         </div>
         <div className="buttonDiv" onClick={menuShow}></div>
         <div className="chargingDiv"></div>
+        <div className="strapTop"></div>
+        <div className="strapBottom"></div>
       </div>
     </>
   );

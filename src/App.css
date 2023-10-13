@@ -284,3 +284,31 @@ button {
   border: none;
   box-shadow: 0px 0px 6px 0px #8080808c;
 }
+.strapTop {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-58%, -138%);
+  height: 200px;
+  width: 80px;
+  border: 1px solid black;
+  z-index: -1;
+  border-radius: 5px 5px 0 0;
+  background-image: url('./images/strap1.jpg');
+  background-size: cover;
+    background-repeat: no-repeat;
+}
+.strapBottom {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-58%, 38%);
+  height: 200px;
+  width: 80px;
+    border: 1px solid black;
+    z-index: -1;
+    border-radius: 0 0 5px 5px;
+    background-image: url('./images/strap1.jpg');
+    background-size: cover;
+      background-repeat: no-repeat;
+}
