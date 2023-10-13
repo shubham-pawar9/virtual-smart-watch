@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/virtual-smart-watch/static/css/main.0f38357e.chunk.css",
-    "main.js": "/virtual-smart-watch/static/js/main.6813761b.chunk.js",
-    "main.js.map": "/virtual-smart-watch/static/js/main.6813761b.chunk.js.map",
+    "main.css": "/virtual-smart-watch/static/css/main.beec5629.chunk.css",
+    "main.js": "/virtual-smart-watch/static/js/main.1cbef025.chunk.js",
+    "main.js.map": "/virtual-smart-watch/static/js/main.1cbef025.chunk.js.map",
     "runtime-main.js": "/virtual-smart-watch/static/js/runtime-main.6ed0ed8f.js",
     "runtime-main.js.map": "/virtual-smart-watch/static/js/runtime-main.6ed0ed8f.js.map",
     "static/js/2.6104a76d.chunk.js": "/virtual-smart-watch/static/js/2.6104a76d.chunk.js",
@@ -10,13 +10,14 @@
     "static/js/3.fed8ac31.chunk.js": "/virtual-smart-watch/static/js/3.fed8ac31.chunk.js",
     "static/js/3.fed8ac31.chunk.js.map": "/virtual-smart-watch/static/js/3.fed8ac31.chunk.js.map",
     "index.html": "/virtual-smart-watch/index.html",
-    "static/css/main.0f38357e.chunk.css.map": "/virtual-smart-watch/static/css/main.0f38357e.chunk.css.map",
-    "static/js/2.6104a76d.chunk.js.LICENSE.txt": "/virtual-smart-watch/static/js/2.6104a76d.chunk.js.LICENSE.txt"
+    "static/css/main.beec5629.chunk.css.map": "/virtual-smart-watch/static/css/main.beec5629.chunk.css.map",
+    "static/js/2.6104a76d.chunk.js.LICENSE.txt": "/virtual-smart-watch/static/js/2.6104a76d.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/virtual-smart-watch/static/media/strap1.7de9f96f.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.6ed0ed8f.js",
     "static/js/2.6104a76d.chunk.js",
-    "static/css/main.0f38357e.chunk.css",
-    "static/js/main.6813761b.chunk.js"
+    "static/css/main.beec5629.chunk.css",
+    "static/js/main.1cbef025.chunk.js"
   ]
 }
