@@ -4,6 +4,7 @@ const Menu = ({
   setBrightnessShow,
   setDialStatus,
   setStopWatchShow,
+  setDialThemeShow,
 }) => {
   return (
     <>
@@ -38,6 +39,18 @@ const Menu = ({
             }}
           >
             Stop watch
+          </li>
+          <li
+            className="menuList"
+            onClick={() => {
+              setDialThemeShow(true);
+              setStopWatchShow(false);
+              setMenuShowStatus(false);
+              setDialStatus(false);
+              setBrightnessShow(false);
+            }}
+          >
+            Dial Theme
           </li>
         </ul>
       </div>

@@ -15,6 +15,7 @@ import strap7 from "../images/strap-design/strap7.png";
 import strap8 from "../images/strap-design/strap8.png";
 import strap9 from "../images/strap-design/strap9.png";
 import strap10 from "../images/strap-design/strap10.png";
+import ThemeCard from "./Faces/ThemeCard";
 const Dial = ({
   facesFun,
   facesShow,
@@ -28,6 +29,8 @@ const Dial = ({
   setBrightnessShow,
   setStopWatchShow,
   stopWatchShow,
+  dialThemeShow,
+  setDialThemeShow,
 }) => {
   const [faceBg, setFaceBg] = useState("./images/faces/1.jpg");
 
@@ -37,6 +40,8 @@ const Dial = ({
   const [minuteStyle, setMinuteStyle] = useState({});
   const [secondStyle, setSecondStyle] = useState({});
   const [dialBrightness, setDialBrightness] = useState("");
+  const [digitalTheme, setDigitalTheme] = useState(false);
+  const [analogTheme, setAnalogTheme] = useState(true);
   const strapTopRef = useRef();
   const strapBottomRef = useRef();
   const dialRef = useRef(10);
@@ -76,6 +81,8 @@ const Dial = ({
                 minuteStyle={minuteStyle}
                 secondStyle={secondStyle}
                 facesFun={facesFun}
+                digitalTheme={digitalTheme}
+                analogTheme={analogTheme}
               />
             )}
             {menuShowStatus && (
@@ -85,10 +92,19 @@ const Dial = ({
                 setBrightnessShow={setBrightnessShow}
                 setDialStatus={setDialStatus}
                 setStopWatchShow={setStopWatchShow}
+                setDialThemeShow={setDialThemeShow}
               />
             )}
             {brightnessShow && <Brightness dialRef={dialRef} />}
             {stopWatchShow && <StopWatch />}
+            {dialThemeShow && (
+              <ThemeCard
+                setDigitalTheme={setDigitalTheme}
+                setAnalogTheme={setAnalogTheme}
+                setDialStatus={setDialStatus}
+                setDialThemeShow={setDialThemeShow}
+              />
+            )}
           </div>
         </div>
         <div className="buttonDiv" onClick={menuShow}></div>

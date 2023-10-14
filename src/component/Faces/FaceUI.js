@@ -1,10 +1,9 @@
-import { useEffect, useRef } from "react";
-// import '../../images/faces/1.jpg'
+import { useState, useEffect, useRef } from "react";
+
 const FaceUI = ({ setFaceBg, setDialStatus, setFacesShow }) => {
   const faceRef = useRef();
-  const selectFaceFun = (e) => {
-    setFaceBg(e.target.src);
-    console.log(e.target.src);
+  const selectFaceFun = (src) => {
+    setFaceBg(src);
     setDialStatus(true);
     setFacesShow(false);
   };
@@ -18,17 +17,45 @@ const FaceUI = ({ setFaceBg, setDialStatus, setFacesShow }) => {
       img.src = `${process.env.PUBLIC_URL}/images/faces/${i}.jpg`;
       div.appendChild(img);
       faceRef.current.appendChild(div);
-      img.addEventListener("click", selectFaceFun);
+      img.addEventListener("click", () => selectFaceFun(img.src));
     }
   };
 
   useEffect(() => {
     faceLoad();
   }, []);
+
+  const handleImageSelect = (e) => {
+    const file = e.target.files[0];
+
+    const reader = new FileReader();
+    console.log(reader);
+    reader.onloadend = () => {
+      setFaceBg(reader.result);
+      setDialStatus(true);
+      setFacesShow(false);
+    };
+
+    if (file) {
+      reader.readAsDataURL(file);
+    }
+  };
+
   return (
     <>
-      <div className="faceUIDiv" ref={faceRef}></div>
+      <div className="faceUIDiv" ref={faceRef}>
+        <label htmlFor="file-upload" className="customFileUploadLabel">
+          Select from Gallery
+        </label>
+        <input
+          id="file-upload"
+          type="file"
+          className="faces"
+          onChange={(e) => handleImageSelect(e)}
+        />
+      </div>
     </>
   );
 };
+
 export default FaceUI;

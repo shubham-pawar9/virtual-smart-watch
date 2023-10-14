@@ -1,7 +1,9 @@
 /* .App {
   text-align: center;
 } */
-
+body {
+user-select: none;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -51,6 +53,11 @@
     align-items: center;
     justify-content: center;
     background-image: linear-gradient(45deg, #3b3838, #000, #000, #3b3838);
+
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     /* background-color: #000; */
 }
 .dialScreen {
@@ -74,7 +81,7 @@
   background-repeat: no-repeat;
   background-position-x: center;
   background-position-y: center;
-  border-radius: 24px;
+  border-radius: 21px;
 }
 .faceUIDiv {
   display: flex;
@@ -85,7 +92,7 @@
   overflow: auto;
   justify-content: space-evenly;
   background-color: #000;
-    border-radius: 10px;
+    border-radius: 21px;
 }
 ::-webkit-scrollbar {
   display: none;
@@ -93,6 +100,7 @@
 .faces {
   height: 30px;
     width: 30px;
+    cursor: pointer;
     /* border: 1px solid black; */
 }
 .faces img {
@@ -181,24 +189,28 @@
     z-index: 1;
 }
 .buttonDiv {
-  height: 26px;
-    width: 7px;
-    border: 1px solid black;
-    border-radius: 0px 5px 5px 0px;
-    position: relative;
-    right: 1px;
-    top: -40px;
-    background-image: repeating-linear-gradient(black, #535353 13%, #8c8c8c 11%);
-    cursor: pointer;
+  height: 28px;
+  width: 7px;
+  border: 1px solid black;
+  border-left-width: 0.5px;
+  border-radius: 0px 5px 5px 0px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(62px, -49px);
+  background-image: repeating-linear-gradient(black, #535353 13%, #8c8c8c 11%);
+  cursor: pointer;
 }
 .chargingDiv {
   height: 40px;
-    width: 4px;
-    border-radius: 0px 2px 2px 0px;
-    position: relative;
-    right: 10px;
-    top: 26px;
-    background-image: repeating-linear-gradient(#000000, #1a0e0e 13%, #000000 5%);
+  width: 4px;
+  border-radius: 0px 2px 2px 0px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(62px, 7px);
+  background-image: repeating-linear-gradient(#000000, #1a0e0e 13%, #000000 5%);
+  z-index: -1;
 }
 .menuDiv {
   height: 100%;
@@ -294,27 +306,35 @@ button {
   position: absolute;
   left: 50%;
   bottom: 50%;
-  transform: translate(-58%, -38%);
+  transform: translate(-50%, -38%);
   height: 200px;
   width: 80px;
   z-index: -1;
   border-radius: 5px 5px 0 0;
   background-size: cover;
   background-repeat: no-repeat;
-  background-position-x: right;
+
+  background-position-x: 75%;
+  border-left: 1px solid #772f1a;
+  border-right: 1px solid #772f1a;
+  border-top: 1px solid #772f1a;
 }
 .strapBottom {
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-58%, 38%);
+  transform: translate(-50%, 38%);
   height: 200px;
   width: 80px;
   z-index: -1;
   border-radius: 0 0 5px 5px;
   background-size: cover;
   background-repeat: no-repeat;
-  background-position-x: right;
+
+  background-position-x: 75%;
+  border-left: 1px solid #772f1a;
+  border-right: 1px solid #772f1a;
+  border-bottom: 1px solid #772f1a;
 }
 .all-time {
   letter-spacing: 3px;
@@ -353,4 +373,85 @@ button {
 }
 .strap-icon.active {
   border: 5px solid #032a07;
+}
+input[type="file"] {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+.customFileUploadLabel{
+  color: #d5b9a0bf;
+  height: 30px;
+  width: 30px;
+  text-align: center;
+  display: flex;
+  font-size: 6px;
+  font-weight: 600;
+  align-items: center;
+  justify-content: center;
+}
+.themeCard {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 80%;
+  justify-content: space-evenly;
+}
+.analogCard , .digitalCard{
+  height: 35%;
+  display: flex;
+  align-items: center;
+  border: 1px solid #fff;
+  width: 100%;
+  justify-content: center;
+  cursor: pointer;
+}
+.analogCard span, .digitalCard span {
+  font-size: 12px;
+  color: #c98919;
+  font-weight: 700;
+}
+.digitalDiv {
+  display: flex;
+  align-items: flex-end;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+}
+.hourSpan, .minuteSpan {
+  font-size: 30px;
+  font-weight: 600;
+  color: #f7bc51;
+  text-shadow: 2px 2px 3px #000000f0;
+  font-family: cursive;
+}
+.timeDiv {
+  padding: 3px 12px;
+  background-color: #ab626b40;
+  -webkit-backdrop-filter: blur(5px);
+  backdrop-filter: blur(2px);
+  border-radius: 21px;
+  z-index: -1;
+}
+.secondSpan {
+  position: absolute;
+  top: 0;
+  font-size: 85px;
+  z-index: -1;
+  opacity: 0.4;
+  color: black;
+  text-shadow: 2px 2px 0px white;
+}
+@media screen and (max-height: 900px) and (max-width: 600px) and (orientation: portrait) {
+  .dialDiv {
+    position: relative;
+    top: -28px;
+  }
+  .dialDiv {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
 }

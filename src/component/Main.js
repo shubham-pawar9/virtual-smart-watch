@@ -8,6 +8,7 @@ const Main = () => {
   const [menuShowStatus, setMenuShowStatus] = useState(false);
   const [brightnessShow, setBrightnessShow] = useState(false);
   const [stopWatchShow, setStopWatchShow] = useState(false);
+  const [dialThemeShow, setDialThemeShow] = useState(false);
   const facesFun = () => {
     setFacesShow(true);
     setDialStatus(false);
@@ -17,6 +18,7 @@ const Main = () => {
     setFacesShow(false);
     setBrightnessShow(false);
     setStopWatchShow(false);
+    setDialThemeShow(false);
     console.log(dialStatus);
     setDialStatus(true);
   };
@@ -35,6 +37,8 @@ const Main = () => {
         brightnessShow={brightnessShow}
         setStopWatchShow={setStopWatchShow}
         stopWatchShow={stopWatchShow}
+        dialThemeShow={dialThemeShow}
+        setDialThemeShow={setDialThemeShow}
       />
     </>
   );
