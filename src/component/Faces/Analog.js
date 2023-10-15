@@ -23,7 +23,7 @@ const Analog = ({
   //   numbers();
   // }, []);
 
-  const { hour, minute, second } = useTime();
+  const { hour, minute, second, day, date } = useTime();
   return (
     <>
       <div
@@ -43,10 +43,13 @@ const Analog = ({
         )}
         {digitalTheme && (
           <div className="digitalDiv">
+            <span className="day">{day}</span>
             <div className="timeDiv">
               <span className="hourSpan">{hour}:</span>
               <span className="minuteSpan">{minute}</span>
+              <span className="date">{date}</span>
             </div>
+
             {/* <span className="secondSpan">{second}</span> */}
           </div>
         )}
